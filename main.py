@@ -21,8 +21,8 @@ def matrix_inverse(matrix):
     # Perform row operations to transform the input matrix into the identity matrix
     for i in range(n):
         if matrix[i, i] == 0:
-            continue
-            #raise ValueError("Matrix is singular, cannot find its inverse.") # found it
+            continue # added this line.
+            #raise ValueError("Matrix is singular, cannot find its inverse.") # found it.
 
         if matrix[i, i] != 1:
             # Scale the current row to make the diagonal element 1
