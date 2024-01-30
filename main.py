@@ -15,7 +15,7 @@ def matrix_inverse(matrix):
     if matrix.shape[0] != matrix.shape[1]:
         raise ValueError("Input matrix must be square.")
 
-    n = matrix.shape[0]
+    n = matrix.shape[0] # number of rows in the matrix
     identity = np.identity(n)
 
     # Perform row operations to transform the input matrix into the identity matrix
