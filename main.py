@@ -10,7 +10,7 @@ If the input matrix is singular (i.e., its diagonal elements become zero during 
 """
 
 def matrix_inverse(matrix):
-    print(bcolors.FAIL + "Github Link: https://github.com/DorMaudi/MatrixLogic\nGroup: Dor Maudi (207055138)\n" + bcolors.ENDC)
+    print(bcolors.FAIL + "Github Link: https://github.com/DorMaudi/MatrixLogic\nGroup: Dor Maudi (207055138)\n Yinon Alfsi (208810374)\n" + bcolors.ENDC)
     print(bcolors.OKBLUE, f"=================== Finding the inverse of a non-singular matrix using elementary row operations ===================\n {matrix}\n", bcolors.ENDC)
     if matrix.shape[0] != matrix.shape[1]:
         raise ValueError("Input matrix must be square.")
