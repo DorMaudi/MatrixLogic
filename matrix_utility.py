@@ -109,7 +109,7 @@ def matrix_multiply(A, B):
     return np.array(result)
 
 
-def row_addition_elementary_matrix(n, target_row, source_row, scalar=1.0):
+def row_addition_elementary_matrix(n, target_row, source_row, scalar): #bug found
 
     if target_row < 0 or source_row < 0 or target_row >= n or source_row >= n:
         raise ValueError("Invalid row indices.")

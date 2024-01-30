@@ -42,15 +42,14 @@ def matrix_inverse(matrix):
         # Zero out the elements above and below the diagonal
         for j in range(n):
             if i != j:
-                for k in range(n):
-                    scalar = -matrix[j, k]
-                    elementary_matrix = row_addition_elementary_matrix(n, j, k, scalar)
-                    print(f"elementary matrix for R{j+1} = R{j+1} + ({scalar}R{k+1}):\n {elementary_matrix} \n")
-                    matrix = np.dot(elementary_matrix, matrix)
-                    print(f"The matrix after elementary operation :\n {matrix}")
-                    print(bcolors.OKGREEN, "------------------------------------------------------------------------------------------------------------------",
+                scalar = -matrix[j, i]
+                elementary_matrix = row_addition_elementary_matrix(n, j, i, scalar)
+                print(f"elementary matrix for R{j+1} = R{j+1} + ({scalar}R{i+1}):\n {elementary_matrix} \n")
+                matrix = np.dot(elementary_matrix, matrix)
+                print(f"The matrix after elementary operation :\n {matrix}")
+                print(bcolors.OKGREEN, "------------------------------------------------------------------------------------------------------------------",
                         bcolors.ENDC)
-                    identity = np.dot(elementary_matrix, identity)
+                identity = np.dot(elementary_matrix, identity)
 
     return identity
 
