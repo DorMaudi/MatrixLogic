@@ -29,7 +29,7 @@ def MaxNorm(matrix):
 #  swapping between row i to row j in the matrix
 def swap_row(mat, i, j):
     N = len(mat)
-    for k in range(N + 1):
+    for k in range(N): # found a bug
         temp = mat[i][k]
         mat[i][k] = mat[j][k]
         mat[j][k] = temp
