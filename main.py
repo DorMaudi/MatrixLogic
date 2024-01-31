@@ -55,9 +55,9 @@ def matrix_inverse(matrix):
 
 if __name__ == '__main__':
 
-    A = np.array([[0, 1, 1],
-                  [0, 5, 1],
-                  [1, 1, 1]])
+    A = np.array([[0, 1, 2],
+                  [1, 2, 4],
+                  [0, 0, 1]])
 
     try:
         A_inverse = matrix_inverse(A)
