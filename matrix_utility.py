@@ -29,7 +29,7 @@ def MaxNorm(matrix):
 #  swapping between row i to row j in the matrix
 def swap_row(mat, i, j):
     N = len(mat)
-    for k in range(N): # found a bug
+    for k in range(N + 1):
         temp = mat[i][k]
         mat[i][k] = mat[j][k]
         mat[j][k] = temp
@@ -88,8 +88,8 @@ def DominantDiagonalFix(matrix):
     return result
 
 
-def swap_rows_elementary_matrix(n, row1, row2):
-    elementary_matrix = np.identity(n)
+def swap_rows_elementary_matrix(elementary_matrix, row1, row2):
+    #elementary_matrix = np.identity(n)
     elementary_matrix[[row1, row2]] = elementary_matrix[[row2, row1]]
 
     return np.array(elementary_matrix)
@@ -109,7 +109,7 @@ def matrix_multiply(A, B):
     return np.array(result)
 
 
-def row_addition_elementary_matrix(n, target_row, source_row, scalar): #bug found
+def row_addition_elementary_matrix(n, target_row, source_row, scalar):
 
     if target_row < 0 or source_row < 0 or target_row >= n or source_row >= n:
         raise ValueError("Invalid row indices.")
