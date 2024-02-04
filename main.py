@@ -17,6 +17,9 @@ def matrix_inverse(matrix):
     n = matrix.shape[0]
     identity = np.identity(n)
 
+    if np.linalg.det(matrix) == 0: raise ValueError("cannot find its inverse.")
+    #if mtx.Determinant(matrix, 1) == 0: raise ValueError("cannot find its inverse.")
+
     # Perform row operations to transform the input matrix into the identity matrix
     for i in range(n):
         elemn_matrix = np.identity(n)
@@ -68,17 +71,20 @@ def matrix_inverse(matrix):
 
 if __name__ == '__main__':
 
-    A = np.array([[0, 2, 3],
-                  [2, 3, 4],
-                  [3, 4, 6]])
+    A = np.array([[4, 2, 3],
+                  [2, 1, 4],
+                  [1, 2, 3]])
+
+    B = np.array([4, 2, 3])
+
+    np.set_printoptions(suppress=True, precision=4)
 
     try:
         A_inverse = matrix_inverse(A)
         print(bcolors.OKBLUE, "\nInverse of matrix A: \n", A_inverse)
         print("=====================================================================================================================", bcolors.ENDC)
-        print(bcolors.OKGREEN, "Test\n", np.dot(A, A_inverse), "\n", bcolors.ENDC)
+        #print(bcolors.OKGREEN, "Test\n", np.dot(A, A_inverse), "\n", bcolors.ENDC)
+        print(bcolors.OKGREEN, "Solving for -> X, Y, Z...:\n", np.dot(A_inverse, B), bcolors.ENDC)
 
     except ValueError as e:
         print(str(e))
-
-
